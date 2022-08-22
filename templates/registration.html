@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>registration form</title>
+<style>
+<!--form  {-->
+<!--        background-color:#FFDEDE;-->
+<!--        border:none;-->
+<!--        width:50%;-->
+<!--        text-align: center;-->
+<!--        border-radius: 12px-->
+<!--      }-->
+.form-box {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 10 10 10px #FFDEDE;
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	width: 500px;
+	box-shadow: 25px 10px 10px black;
+	}
+h2{
+         font-family: Tahoma, Verdana, sans-serif;
+         text-transform: uppercase;
+         color: #4CAF50;
+         text-shadow: 2px 2px 5px black;
+         letter-spacing: 5px;
+}
+
+
+ input[type=text], input[type=password], input[type=email]
+  {
+  margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	width: 100%;
+	font-size: 18px;
+	font-family: poppins;
+    border-radius: 5px;
+    }
+
+
+
+ input[type=submit]{
+         width: 30%;
+         border-radius: 5px;
+         margin-left: 180px ;
+         display: inline-block;
+         padding: 12px 20px;
+        display: inline-block;
+        border: 1px ;
+        background-color: #4CAF50;
+        box-sizing: border-box;
+        box-shadow: 5px 10px 38px black;
+
+
+    }
+    input[type=submit]:hover {
+        opacity: 0.7;
+    }
+
+   .container {
+	position: absolute;
+	top: 0px;
+	bottom: 60px;
+	left: 30px;
+	right: 20px;
+	width: 500px;
+	height:50%
+
+}
+
+
+
+
+.child {
+    text-align:center;
+    margin-top:10px;
+    padding:10px;
+
+
+
+}
+
+
+</style>
+</head>
+<body style="background-color: #EB4747;">
+<div class="form-box">
+  <div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+       <div class="child"><h2><b><i>Registration Form</i></b></h2></div>
+        <input type="text" name="username" placeholder=" Username"><br><br>
+        <input type="text" name="first_name" placeholder=" First Name"><br><br>
+        <input type="text" name="last_name" placeholder=" Last  name"><br><br>
+        <input type="email" name="email" placeholder=" E-mail"><br><br>
+        <input type="password" name="password" placeholder=" Password"><br><br>
+        <input type="password" name="password1" placeholder="Password"><br><br>
+       <div class="button"><input type="submit"></div>
+    </form>
+  </div>
+</div>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
